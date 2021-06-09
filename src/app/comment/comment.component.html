@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="row mb-5">
+    <div class="col-5">
+      <label>Filter:</label>
+      <select class="form-select"
+              [(ngModel)]="listSelected" (ngModelChange)="onListSelected($event)">
+        <option disabled>Select</option>
+        <option *ngFor="let list of listPost" [value]="list.id">
+          {{list.name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-7 d-flex align-items-center mt-3">
+      <p class="mb-0">Selected Post Id <strong class="text-primary fs-4">{{listSelected}}</strong></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead class="table-dark">
+          <tr>
+            <th style="width: 8%" class="bg-primary">Post Id</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Body</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let list of listPost">
+            <td class="bg-primary text-white">{{list.postId}}</td>
+            <td>{{list.id}}</td>
+            <td>{{list.name}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.body}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

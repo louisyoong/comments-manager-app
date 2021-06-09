@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h2>View all posts</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table class="table my-5">
+          <thead class="table-dark">
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th colspan="2">Body</th>
+          </tr>
+          </thead>
+
+          <tbody class="mt-5">
+          <tr *ngFor="let post of listPost">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+            <td><a class="btn btn btn-outline-primary btn-sm" [routerLink]="['/post/'+ post.id]">View</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
